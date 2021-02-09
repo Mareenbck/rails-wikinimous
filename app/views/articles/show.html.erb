@@ -1,0 +1,27 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+ <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <%= link_to("Wikinimous", articles_path) %></a>
+  </div>
+</nav>
+
+<div class="container">
+<div class="d-flex justify-content-between">
+<h2><%= @article.title %></h2>
+<%= link_to edit_article_path(@article) do %>
+  <i class="fas fa-pencil-alt"></i>
+  <% end %>
+<%= link_to article_path(@article),
+                method: :delete,
+                data: {confirm: "Are you sure ?"} do %>
+      <i class="far fa-trash-alt"> </i>
+    <% end %>
+</div>
+
+<p><%= @article.content %></p>
+
+
+
+<%= link_to("Back", articles_path) %>
+
+</div>
